@@ -33,7 +33,7 @@ export default class User {
   @Column()
   email: string;
 
-  @ManyToOne(type => Congregation)
+  @ManyToOne(type => Congregation, congregation => congregation.id)
   @JoinColumn({ name: 'congregation_id' })
   congregation: Congregation;
 
