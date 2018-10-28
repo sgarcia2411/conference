@@ -6,6 +6,7 @@ import express from 'express';
 import 'reflect-metadata';
 import http from 'http';
 import { logger } from './utils/logger';
+import { PingRoute } from './routes/ping.routes';
 
 const log = logger.getLogger('server');
 
@@ -21,6 +22,7 @@ createConnection('mysqlConnection').then(async (connection: any) => {
   log.info('mysql connect success', connection);
 }).catch(error => log.error(error));
 
+app.use('/ping', PingRoute);
 
 // Serve the application at the given port
 server.listen(port, () => {
