@@ -1,0 +1,30 @@
+[
+    {
+        "name": "mysqlConnection",
+        "type": "mysql",
+        "host": "localhost",
+        "port": 3306,
+        "username": "root",
+        "password": "Cleopatra",
+        "database": "conference",
+        "synchronize": true,
+        "logging": false,
+        "entities": [
+            "app/models/mysql/**/*.ts"
+        ],
+        "cli": {
+            "entitiesDir": "app/models"
+        },
+        "autoSchemaSync": true
+    },
+    {
+        "name": "mongoConnection",
+        "type": "mongodb",
+        "host": "localhost",
+        "port": 27017,
+        "database": "brainy",
+        "entities": [
+            "app/models/mongo/**/*.ts"
+        ]
+    }
+]
